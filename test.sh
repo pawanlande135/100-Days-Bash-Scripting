@@ -12,3 +12,4 @@ else
     echo "Provided number not divisible by 10:"
 fi
 
+# second change
