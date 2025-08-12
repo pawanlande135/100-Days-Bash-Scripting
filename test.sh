@@ -1,21 +1,26 @@
 #!/usr/bin/bash
 
 
-# Write a script that will ask username and password from user and then 
-#using if condition verify if username="admin" and password="admin" , 
-#if condition meets then print "Login Success" else print "Wrong Login" ?
+#Write a script that will ask a number from user 
+#then using if condition verify if number is divisible by 3 and 5 both , 
+#if condition meets then print "Divisible" else print "Not Divisible" ?
+
+read -p "Enter a number: " val
+
+div3=$(($val%3))
+div5=$(($val%5))
 
 
-read -p "Enter username: " username
-read -p "Enter password: " password
+if [[ $div3 -eq 0  &&  $div5 -eq 0 ]]
+then 
 
-if [[ "$username" == "admin" && "$password" == "admin" ]]; then
-    echo "Login Success"
-else
-    echo "Wrong Login"
-fi
+   echo "Number is divisible by both"
+   
+   else 
+      echo "Number is non-divisible by both"
+	  
+	  fi
+
+#=====================================================================================
 
 
-
-
-# fourth change
