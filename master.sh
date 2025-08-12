@@ -3,6 +3,8 @@
 #=====================================================================================
 # Create a script that will take user name as input and then print the same on Screen.
 
+!/usr/bin/bash
+
 echo "Please enter your name:"
 read username
 
@@ -12,7 +14,7 @@ echo "Your username is : $username"
 # Create a script that will print "Even Day" if current date is an even number.
 
 
-#!/usr/bin/bash
+!/usr/bin/bash
 
 d=$(date +%d)
 
@@ -26,7 +28,7 @@ fi
 #=====================================================================================
 # Create a script that will print "OK" if current hour is an even number 
 
-#!/usr/bin/bash
+!/usr/bin/bash
 
 d=$(date +%H)
 
@@ -40,7 +42,7 @@ fi
 #=====================================================================================
 # Create a script that will check if number is less 100 and then prints "less than 100" else prints "greater than 100"
 
-#!/usr/bin/bash
+!/usr/bin/bash
 
 
 #echo "Please enter the number that you want to check:"
@@ -58,7 +60,7 @@ fi
 # Create a script that will check if number is divisible by 10 and then prints "divisible by 10" else prints "not divisible by 10" (use CLA)
 
 
-#!/usr/bin/bash
+!/usr/bin/bash
 
 
 val=$1
