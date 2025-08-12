@@ -1,15 +1,21 @@
 #!/usr/bin/bash
 
 
-val=$1
+# Write a script that will ask username and password from user and then 
+#using if condition verify if username="admin" and password="admin" , 
+#if condition meets then print "Login Success" else print "Wrong Login" ?
 
 
-if [[ $((val%10)) -eq 0 ]] 
+read -p "Enter username: " username
+read -p "Enter password: " password
 
-then 
-    echo "Provided number divisible by 10"
+if [[ "$username" == "admin" && "$password" == "admin" ]]; then
+    echo "Login Success"
 else
-    echo "Provided number not divisible by 10:"
+    echo "Wrong Login"
 fi
+
+
+
 
 # fourth change
