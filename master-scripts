@@ -137,3 +137,110 @@ else
   
   fi
 #=====================================================================================
+
+#Write a script that will print numbers 1 to 20 on screen using for loop ?
+
+#!/usr/bin/bash
+
+for i in {1..20}
+
+do 
+
+
+echo -n "$i"  # -n option is used to avoid newline after each number
+sleep 0.5 
+echo -n " "    # Adding a space between numbers
+done
+
+#=====================================================================================
+
+#Write a script that will create a directory with name "dummy" 
+#then generate 10 empty files named like 1, 2 ... 10 in that dummy directory using for loop ?
+
+#!/usr/bin/bash
+
+mkdir dummy
+cd dummy
+
+for i in {1..10}
+do
+  touch $i.txt
+  echo "File $i.txt created."
+done
+
+#=====================================================================================
+
+#Write a script that will iterate between 1 to 100 and print all numbers divisible by 5 ?
+ 
+ 
+#i/usr/bin/bash
+
+for i in {1..100}
+
+do
+
+if [[ $((i%5)) -eq 0 ]]
+then 
+echo "$i is divisible by 5"
+fi
+
+done
+#=====================================================================================
+
+#Write a script that will print numbers 1 to 10 on screen using while loop ?
+
+#!/usr/bin/bash
+
+i=1
+while [[ $i -lt 10 ]]
+
+do
+
+echo -n $i
+sleep 0.4
+echo -n " "
+
+((i++))
+
+done
+
+#=====================================================================================
+#Write a script that will keep running (using while loop) with "sleep 1" command until user press ctrl+c to kill it ?
+
+
+#!/bin/bash
+
+while :   # Infinite loop
+
+do
+
+echo "Press <CTRL+C> to exit the script"
+sleep 1  # Sleep for 1 second
+
+
+
+done
+#=====================================================================================
+#Write a script that will keep printing numbers from 1 to 10, 
+#if the number in loop is 2 then loop must break and shall not continue to print ?
+
+
+#!/bin/bash
+
+i=0
+
+while [[ $i -lt 10 ]]
+
+do
+echo -n $i 
+sleep 0.4
+echo -n " "
+if [[ $i -eq 2 ]]
+then
+  echo  "Breaking the loop at number 2"
+  break
+fi
+
+((i++))
+done
+#=====================================================================================
