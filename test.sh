@@ -1,24 +1,22 @@
-#!/usr/bin/bash
+#Write a script that will keep printing numbers from 1 to 10, 
+#if the number in loop is 2 then loop must break and shall not continue to print ?
 
 
-#Write a script that will ask a number from user 
-#then using if condition verify if number is divisible by 3 or 5 or 7 (any one) , 
-#if condition meets then print "Divisible" else print "Not Divisible" ?
+#!/bin/bash
 
+i=0
 
-#i/usr/bin/bash
+while [[ $i -lt 10 ]]
 
-read -p "Enter the number that you want to test:" val
+do
+echo -n $i 
+sleep 0.4
+echo -n " "
+if [[ $i -eq 2 ]]
+then
+  echo  "Breaking the loop at number 2"
+  break
+fi
 
-
-
-
-if [[ $((val%3)) -eq 0 || $((val%5)) -eq 0 || $((val%7)) -eq 0 ]]
-
-then 
-  echo "This is Divisible"
-  
-else 
-  echo "Non-Divisible"
-  
-  fi
+((i++))
+done
