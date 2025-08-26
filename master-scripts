@@ -244,3 +244,162 @@ fi
 ((i++))
 done
 #=====================================================================================
+
+#Write a script that will keep printing numbers from 1 to 5, 
+#skip if number is 3 (Use while loop and Continue statement) ?
+
+#!/usr/bin/bash
+i=0
+while [[ $i -le 5 ]]
+
+do 
+((i++))
+  if [[ $i -eq 3 ]]
+  then 
+    continue
+    fi
+echo $i
+done
+#=====================================================================================
+
+# Write a script that will keep printing odd numbers between 1 to 100 ?
+i=o
+
+
+while [[ $i -lt 100 ]]
+do
+((i++))
+if 
+   [[ $(($i%2)) -ne 0 ]]
+   then 
+    echo -n $i
+    echo -n " "
+    sleep 0.2
+	fi
+	
+done
+
+#=====================================================================================
+
+
+# Write a script that will keep printing Even numbers between 1 to 100 ?
+i=o
+
+
+while [[ $i -lt 100 ]]
+do
+((i++))
+if 
+   [[ $(($i%2)) -eq 0 ]]
+   then 
+    echo -n $i
+    echo -n " "
+    sleep 0.2
+	fi
+	
+done
+#=====================================================================================
+
+#Write a script that will ask 2 numbers from user and then prints the sum of given 2 numbers ?
+
+
+#!/usr/bin/bash
+
+read -p "Please enter first Number:" a
+read -p "Please enter second Number:" b 
+
+s=$((a+b))
+
+echo "Addition of both the above numbers is : $s"
+#=====================================================================================
+
+#Write a script that will ask 2 numbers from user and then prints the Multiplication of given 2 numbers ?
+
+
+#!/usr/bin/bash
+
+read -p "Please enter first Number:" a
+read -p "Please enter second Number:" b 
+
+s=$((a*b))
+
+echo "Multiplication  of both the above numbers is : $s"
+
+#=====================================================================================
+
+#Write a script that will ask user to input directory path 
+# script will count total number of files in the given directory ?
+
+#!/usr/bin/bash
+
+read -p "Enter the directory where you want to count the number of files:" dir 
+
+echo "Number of files present in this directory is : $(ls -L $dir | wc -w)"
+
+#=====================================================================================
+
+#Write a script that will return the 10 largest directories and file (in terms of size) in the "/var/log" directory ?
+
+
+#!/usr/bin/bash
+
+du -ah /var/log | sort -rh | head -n 10
+#=====================================================================================
+#Write a script that will keep writing user inputs from terminal into a file , 
+#until we press CTRL + D to save the changes ?      
+
+#!/bin/bash
+
+file=input.log
+
+echo  "Enter text (Press CTRL+D to save and exit): " 
+
+while read line
+
+do 
+echo $line >> $file
+done
+#=====================================================================================
+
+#Write a script that will keep writing user inputs from terminal into a file , 
+#until we press CTRL + D to save the changes ?      
+
+#!/usr/bin/bash
+
+
+d=$(date +%d)
+if [[ $d -lt 10 ]]
+then 
+  echo "Less than 10"
+  
+elif  [[ $d -gt 10 ]]
+then 
+     echo "Greater than 10"
+else 
+  echo "Equals to 10"
+  fi
+
+#=====================================================================================
+#Write a script in which we must  use a function  named as sum, 
+#which will be triggered to calculate the sum of 2 numbers provided by user at runtime ?
+
+
+#!/usr/bin/bash
+
+function sum()
+{
+
+read -p "enter first number :" n1
+read -p  "enter second number :" n2
+
+echo "The sum of both the numbers is $((n1+n2))"
+}
+
+# Trigger the function
+sum
+#=====================================================================================
+
+
+
+
+
