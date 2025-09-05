@@ -399,6 +399,67 @@ echo "The sum of both the numbers is $((n1+n2))"
 sum
 #=====================================================================================
 
+#Write a script that will check if you are currently logged in as root user or not ?
+
+#!/usr/bin/bash
+
+if [ "$(id -u)" -eq 0 ]; then
+    echo "You are logged in as root user."
+else
+    echo "You are not logged in as root user."
+fi
+#=====================================================================================
+
+#Write a script that will have a function named as "area" that will take two parameters within the script 
+#to calculate the area of rectangle ? 
+
+#!/usr/bin/bash
+
+area() {
+
+area=$(($1*$2))
+echo "Area of the rectangle is $area" 
+}
+
+area 10 13
+
+#=====================================================================================
+
+#Write a script which will print substring "like bash" 
+#from the given string "I like bash scripting" ?
+
+#!/usr/bin/bash
+
+string="Be the best at what you do"
+substring=${string:3:9}
+echo $substring
+
+#=====================================================================================
+
+#Write a script which will grep "error" in all the "*.log" files at /var/log directory 
+#you need to print the unique file names which are having "error" string in them 
+#and remove duplicate file names from output ?
+
+
+#!/usr/bin/bash
+
+grep -rl "error" /var/log/*.log | sort -u    
+# -r : recursive, -l : list only filenames which matched the string , -u : unique
+
+#=====================================================================================
+
+#Write a script which will grep "error" in all the "*.log" files at /var/log directory 
+#you need to print the unique file names which are not having "error" string in them 
+#and remove duplicate file names from output ?
+
+
+#!/usr/bin/bash
+
+grep -rL "error" /var/log/*.log | sort -u   
+
+# -r : recursive, -L : list only filenames which did not match the string , -u : unique 
+#=====================================================================================
+
 
 
 

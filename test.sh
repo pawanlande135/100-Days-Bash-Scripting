@@ -1,15 +1,10 @@
-
-#Write a script in which we must  use a function  named as sum, 
-#which will be triggered to calculate the sum of 2 numbers provided by user at runtime ?
+#Write a script which will grep "error" in all the "*.log" files at /var/log directory 
+#you need to print the unique file names which are not having "error" string in them 
+#and remove duplicate file names from output ?
 
 
 #!/usr/bin/bash
 
-function sum()
-{
+grep -rL "error" /var/log/*.log | sort -u       
 
-read -p "enter first number :" n1
-read -p  "enter second number :" n2
 
-echo "The sum of both the numbers is $((n1+n2))"
-}
