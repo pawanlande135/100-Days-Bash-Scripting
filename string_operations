@@ -1,0 +1,10 @@
+string="My Name is Lakhan"
+echo ${string^^}   # Converts to Uppercase
+echo ${string,,}   # Converts to Lowercase
+echo ${string^}    # Converts first character to Uppercase
+echo ${string,}    # Converts first character to Lowercase
+echo ${#string}    # Length of the string
+echo ${string:3:4} # Substring (starts from index 3 and takes 4 characters)
+echo ${string: -3} # Last 3 characters
+echo ${string:0:3} # First 3 characters
+echo ${string:3}   # Substring from index 3 to end

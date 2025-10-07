@@ -361,8 +361,10 @@ echo $line >> $file
 done
 #=====================================================================================
 
-#Write a script that will keep writing user inputs from terminal into a file , 
-#until we press CTRL + D to save the changes ?      
+#Write a script that will capture the current date and then prints "Less than 10" if current date is less than 10 or 
+#prints "Equals to 10" if current date is equal to 10 
+#else prints "Greater than 10" if current date is greater than 10 ?
+    
 
 #!/usr/bin/bash
 
@@ -444,7 +446,8 @@ echo $substring
 #!/usr/bin/bash
 
 grep -rl "error" /var/log/*.log | sort -u    
-# -r : recursive, -l : list only filenames which matched the string , -u : unique
+# -r : recursive, -l : list only filenames which matched the string , -u : unique, 
+# -L : list only filenames which did not match the string
 
 #=====================================================================================
 
@@ -458,7 +461,38 @@ grep -rl "error" /var/log/*.log | sort -u
 grep -rL "error" /var/log/*.log | sort -u   
 
 # -r : recursive, -L : list only filenames which did not match the string , -u : unique 
+# -l : list only filenames which matched the string
 #=====================================================================================
+
+#Write a script which will grep "error" or "host" keywords in all the "*.log" files at /var/log directory, 
+#you need to print all the errors on screen which are having both keywords in same row ?
+
+#!/bin/bash
+egrep  "error|host" /var/log/*.log
+
+#OR
+
+#grep -E "error|host" /var/log/*.log   --- is also correct.
+
+#======================================================================================
+
+
+#Write a script which will grep "error" in all the "*.log" files at /var/log directory, 
+#you need to make a copy of all the log files having "error" keyword in them and 
+#place the copy file at your current directory ?
+
+#!/bin/bash
+
+for file in /var/log/*.log; 
+do
+    if grep -q "error" "$file" # -q for quiet mode, to suppress output
+     then 
+        cp "$file" ./
+    fi
+done
+
+#======================================================================================
+
 
 
 
