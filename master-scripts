@@ -493,6 +493,21 @@ done
 
 #======================================================================================
 
+#Write a script to copy all .log files from /var/log to /tmp direcory. 
+#Once all files copied to /tmp directory, 
+#replace all the "error" keyword with "Warning" keyword in all .log files at /tmp directory ?
+
+
+#!/usr/bin/bash
+cp  /var/log/*.log  ./verf
+
+for file in $(ls ./verf/*.log)
+do
+sed -i 's/error/Warning/g'  $file
+done
+
+#======================================================================================
+
 
 
 
