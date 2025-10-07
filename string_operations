@@ -8,3 +8,18 @@ echo ${string:3:4} # Substring (starts from index 3 and takes 4 characters)
 echo ${string: -3} # Last 3 characters
 echo ${string:0:3} # First 3 characters
 echo ${string:3}   # Substring from index 3 to end
+
+
+## while doing mathematical operartions in double parentheses we don't need to use $ before variable name.
+a=10
+b=20            
+sum=$((a+b))
+echo $sum
+
+## after doing mathematical operatsion using double parantheses to hold the result we can use $ before variable name.
+a=10
+b=20            
+sum=$((a+b))
+
+# break is used to exit from the loop entirely.
+# continue is used to skip the current iteration and move to the next iteration of the loop.
