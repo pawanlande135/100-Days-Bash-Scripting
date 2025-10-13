@@ -532,6 +532,74 @@ done
 #=================================
 
 
+#Write a script that will display 2 Columns (Mounted and Used%) ,
+ #mount name and disk usage percentage in sorted order from low used % to high % ?
+
+#!/usr/bin/bash
+
+df -h | awk 'NR > 1 {print $6, $5}' | sort -k2n
+
+
+#=====================================================================================
+
+#Write a script that will sleep for 100 seconds, but when we trigger the script it must ran in the background mode ?
+
+#!/usr/bin/bash
+
+sleep 100 &
+
+#=====================================================================================
+
+
+#Write a script that will take 2 command line arguments (numbers) from user and then 
+#print the sum on screen, if user don’t input 2 numbers as argument, then display an error message ?
+
+
+#!/usr/bin/bash 
+
+#!/usr/bin/bash
+
+
+if [[ $# -ne 2 ]]
+then
+    echo "Error: Please provide exactly two numbers as arguments."
+    exit 1
+    else
+    sum=$(($1 + $2))
+    echo "The sum of $1 and $2 is: $sum"
+fi
+
+#=====================================================================================
+
+#Write a script that will allow the user choose a color and shows a comment against that color (using case statement) ?
+
+#!/usr/bin/bash
+
+echo "Enter the number to select the colour"
+
+echo "1 - orange"
+echo "2 - green"
+echo "3 - blue" 
+echo "4 - yellow"
+echo "5 - red"
+
+read colour
+
+case $colour in
+1) echo "You have selected orange";;
+2) echo "You have selected green";; 
+3) echo "You have selected blue";;
+4) echo "You have selected yellow";;
+5) echo "You have selected red";;
+*) echo "Invalid selection";;
+esac
+
+
+#=====================================================================================
+
+
+
+
 
 
 
